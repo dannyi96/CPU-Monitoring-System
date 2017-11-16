@@ -18,10 +18,11 @@ def parseData(dataFile):
 	analyze(l)
 
 s = socket.socket()
-s.bind(("localhost",3988))
+s.bind(("localhost",3948))
 s.listen(10)
 i = 0
 j = 0
+
 def analyze(l):
 	for elem in l:
 		if(elem[0] == "Tasks"):
@@ -59,8 +60,8 @@ while(True):
 	sc,address = s.accept()
 	print(address)
 	print("port number is : ",int(address[1]))
-	f = open('file_' + str(i) + '.txt','w+')
-	toSendFile = open('send_'+str(j)+'.txt','w+')
+	f = open('Received Files/'+'file_' + str(i) + '.txt','w+')
+	toSendFile = open('Sent Files/'+'send_'+str(j)+'.txt','w+')
 	i += 1
 	j += 1
 	l = sc.recv(1024)  # Will contain the entire data
