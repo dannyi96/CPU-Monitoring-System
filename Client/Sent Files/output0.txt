@@ -1,10 +1,10 @@
-top - 16:05:57 up 41 min,  1 user,  load average: 0.69, 0.68, 0.54
-Tasks: 230 total,   2 running, 228 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  4.3 us,  0.7 sy,  0.0 ni, 91.7 id,  3.2 wa,  0.0 hi,  0.0 si,  0.0 st
-KiB Mem :  8074948 total,  6170592 free,   828284 used,  1076072 buff/cache
-KiB Swap:  8288252 total,  8288252 free,        0 used.  6670044 avail Mem 
+top - 00:45:48 up  1:14,  1 user,  load average: 0.23, 0.50, 0.51
+Tasks: 243 total,   3 running, 232 sleeping,   8 stopped,   0 zombie
+%Cpu(s):  2.7 us,  0.6 sy,  0.0 ni, 94.4 id,  2.3 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  8074948 total,  5955668 free,   814136 used,  1305144 buff/cache
+KiB Swap:  8288252 total,  8288252 free,        0 used.  6622072 avail Mem 
 
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
- 4478 daniel    20   0  225204  59748  10632 R  75.0  0.7   0:00.12 python
- 4451 daniel    20   0  230908  65880  11164 S  68.8  0.8   0:02.09 python
- 2063 daniel    20   0 1623848 151996  69136 S  31.2  1.9   0:48.61 compiz
+ 8671 daniel    20   0  225972  60892  10976 R  81.2  0.8   0:00.13 python
+ 1858 daniel    20   0  447668  27392  21180 S  18.8  0.3   0:02.94 bamfdaemon
+ 2160 daniel    20   0 1620780 149976  66852 R  18.8  1.9   1:11.53 compiz
