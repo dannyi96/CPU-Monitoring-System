@@ -1,4 +1,5 @@
 import socket
+import sys
 
 def parseData(dataFile):
 	l = []
@@ -18,7 +19,7 @@ def parseData(dataFile):
 	analyze(l)
 
 s = socket.socket()
-s.bind(("localhost",3948))
+s.bind(("localhost",int(sys.argv[1])))
 s.listen(10)
 i = 0
 j = 0
@@ -30,25 +31,25 @@ def analyze(l):
 				toSendFile.write("Too many Total Tasks: " + elem[1] + "\n")
 			else:
 				toSendFile.write("Total Number of Tasks is normal " + elem[1]+"\n")
-			if(int(elem[2])>10):
+			if(int(elem[2])>14):
 				toSendFile.write("Too many running tasks: "+elem[2]+"\n")
 			else:
 				toSendFile.write("Number of running tasks is normal: "+ elem[2]+"\n")
 		if(elem[0]=="CPU"):
-			if(float(elem[1])>1.0):
+			if(float(elem[1])>1.5):
 				toSendFile.write("Too many user processes: "+elem[1] + "\n")
 			else:
 				toSendFile.write("Number of user processes is normal: " +elem[1]+"\n")
 			
-			if(float(elem[2])>0.5):
+			if(float(elem[2])>0.8):
 				toSendFile.write("Too many system processes: "+elem[2]+"\n")
 			else:
 				toSendFile.write("Number of system processes is normal: "+elem[2]+"\n")
 		if(elem[0]=="Memory"):
 			if(int(elem[1])-int(elem[3])<150000):
-				toSendFile.write("Too much Memory usage: "+str(int(elem[1])-int(elem[3])) + "\n")
+				toSendFile.write("Too much Memory usage. Memory left: "+str(int(elem[1])-int(elem[3])) + "\n")
 			else:
-				toSendFile.write("Normal Memory usage: " + str(int(elem[1])-int(elem[3])) + "\n")
+				toSendFile.write("Normal Memory usage. Memory left: " + str(int(elem[1])-int(elem[3])) + "\n")
 		 
 	toSendFile.write("Current Processes\n")
 	toSendFile.write("Process \t\t CPU % \t \t Memory usage\n")

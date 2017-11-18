@@ -1,9 +1,9 @@
-Total Number of Tasks is normal 225
-Number of running tasks is normal: 1
-Too many user processes: 2.9
-Too many system processes: 0.8
-Normal Memory usage: 7399036
+Total Number of Tasks is normal 228
+Number of running tasks is normal: 2
+Too many user processes: 4.3
+Number of system processes is normal: 0.7
+Normal Memory usage. Memory left: 7323120
 Current Processes
 Process 		 CPU % 	 	 Memory usage
-root 	 	 0.0 	 	 0.1
-root 	 	 0.0 	 	 0.0
+daniel 	 	 81.2 	 	 0.8
+daniel 	 	 25.0 	 	 1.9
