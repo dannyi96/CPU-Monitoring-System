@@ -64,12 +64,19 @@ def animate(i):
 	graph5.set_ylim([0, 400000])
 
 
-id1 = os.fork()
+# id1 = os.fork()
+# if(id1!=0):    # Parent Process
+s = socket.socket()
+s.connect(("localhost",int(sys.argv[1])))
+k = 0
+print "Connecting as user"
 
-if(id1!=0):    # Parent Process
+s.send(str(k))
+
+#if(k==str(0)):
+id1 = os.fork()
+if(id1!=0):
 	while(True):
-		s = socket.socket()
-		s.connect(("localhost",int(sys.argv[1])))
 		# Run command to check system specs and store in output.txt
 		os.system('top -n 1 -b | head -n 10 > Sent\ Files/output'+ str(i)+ '.txt')
 
@@ -79,16 +86,23 @@ if(id1!=0):    # Parent Process
 		j += 1
 
 		data = f.read() # can specify how much data of output is needed to be sent
-
 		s.send(data)
 		d = s.recv(1024)
 		print(d)
 		recv.write(d)
 		recv.seek(0,0)
+			# ani = animation.FuncAnimation(fig, animate, interval=1000)
+			# plt.show()
 		time.sleep(3) # sleep for 3 seconds
-		
+			# plt.close()
 else:  # Child Process
-		ani = animation.FuncAnimation(fig, animate, interval=1000)
-		plt.show()
+ 	ani = animation.FuncAnimation(fig, animate, interval=1000)
+ 	plt.show()
+#else:
+#	j = raw_input()
+#	s.send(j)
+#	k = s.recv(1024)
+#	print k
+
 
 s.close()
